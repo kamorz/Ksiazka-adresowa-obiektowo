@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>7</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>168</x>
-      <y>70</y>
-      <w>203</w>
-      <h>294</h>
+      <x>132</x>
+      <y>12</y>
+      <w>174</w>
+      <h>252</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
@@ -19,10 +19,10 @@ KsiazkaAdresowa()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>399</x>
-      <y>70</y>
-      <w>217</w>
-      <h>294</h>
+      <x>330</x>
+      <y>12</y>
+      <w>186</w>
+      <h>252</h>
     </coordinates>
     <panel_attributes>UzytkownikMenedzer
 --
@@ -33,18 +33,20 @@ KsiazkaAdresowa()</panel_attributes>
 +logowanieUzytkownika():Integer
 +wypiszWszystkichUzytkownikow():void
 +wczytajUzytkownikowZPliku():void
++zmianaHaslaZalogowanegoUzytkownika():void
 -podajDaneNowegoUzytkownika():Uzytkownik
 -pobierzIdNowegoUzytkownika():Integer
--czyIstniejeLogin():Bool</panel_attributes>
+-czyIstniejeLogin():Bool
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>644</x>
-      <y>77</y>
-      <w>196</w>
-      <h>189</h>
+      <x>540</x>
+      <y>18</y>
+      <w>168</w>
+      <h>162</h>
     </coordinates>
     <panel_attributes>Uzytkownik
 
@@ -57,10 +59,10 @@ KsiazkaAdresowa()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>644</x>
-      <y>280</y>
-      <w>189</w>
-      <h>217</h>
+      <x>720</x>
+      <y>18</y>
+      <w>162</w>
+      <h>186</h>
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 
@@ -77,16 +79,51 @@ KsiazkaAdresowa()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>861</x>
-      <y>189</y>
-      <w>140</w>
-      <h>147</h>
+      <x>720</x>
+      <y>216</y>
+      <w>162</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>MetodyPomocnicze
 
 --
 +konwersjaIntNaString():String
 +wczytajLinie():String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>276</y>
+      <w>186</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>AdresatMenedzer
+--
+
+--
++dodajAdresata():Integer
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>204</y>
+      <w>168</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>Adresat
+--
+-id:Integer
+-idUzytkownika:Integer
+-imie:String
+-nazwisko:String
+-numerTelefonu:String
+-adres:String
+-email:String</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
