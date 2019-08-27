@@ -1,15 +1,92 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>60</x>
-      <y>40</y>
-      <w>100</w>
-      <h>30</h>
+      <x>168</x>
+      <y>70</y>
+      <w>203</w>
+      <h>294</h>
     </coordinates>
-    <panel_attributes>SimpleClass</panel_attributes>
+    <panel_attributes>KsiazkaAdresowa
+--
+-UzytkownikMenedzer: uzytkownikMenedzer
+--
+KsiazkaAdresowa()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>399</x>
+      <y>70</y>
+      <w>217</w>
+      <h>294</h>
+    </coordinates>
+    <panel_attributes>UzytkownikMenedzer
+--
+-idZalogowanegoUzytkownika:Integer
+-uzytkownicy:vector &lt;Uzytkownik&gt;
+--
++rejestracjaUzytkownika():void
++logowanieUzytkownika():Integer
++wypiszWszystkichUzytkownikow():void
++wczytajUzytkownikowZPliku():void
+-podajDaneNowegoUzytkownika():Uzytkownik
+-pobierzIdNowegoUzytkownika():Integer
+-czyIstniejeLogin():Bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>644</x>
+      <y>77</y>
+      <w>196</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>Uzytkownik
+
+--
+-id:Integer
+-login:String
+-haslo:String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>644</x>
+      <y>280</y>
+      <w>189</w>
+      <h>217</h>
+    </coordinates>
+    <panel_attributes>PlikZUzytkownikami
+
+--
+-nazwaPlikuZUzytkownikami:String
+-fstream:PlikTekstowy
+--
++PlikZUzytkownikami()
++dopiszUzytkownikaDoPliku():void
+-czyPlikJestPusty():Bool
+-zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami():String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>861</x>
+      <y>189</y>
+      <w>140</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>MetodyPomocnicze
+
+--
++konwersjaIntNaString():String
++wczytajLinie():String</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

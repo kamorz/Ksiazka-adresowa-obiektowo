@@ -20,6 +20,7 @@ public:
     string pobierzLogin();
     string pobierzHaslo();
 
+    //friend int logowanieUzytkownika();
 };
 
 #endif
