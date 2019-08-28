@@ -56,9 +56,9 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
 {
         for (int i=0; i<uzytkownicy.size(); i++)
     {
-        cout<<uzytkownicy[i].pobierzID()<<endl;
-        cout<<uzytkownicy[i].pobierzLogin()<<endl;
-        cout<<uzytkownicy[i].pobierzHaslo()<<endl;
+        cout<<"ID: "<<uzytkownicy[i].pobierzID()<<" ";
+        cout<<"Login:"<<uzytkownicy[i].pobierzLogin()<<endl;
+        cout<<"Haslo: "<<uzytkownicy[i].pobierzHaslo()<<endl<<endl;
     }
 }
 
@@ -89,16 +89,23 @@ int UzytkownikMenedzer::logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return przeszukiwaczUzytkownikow+1;
+                    return uzytkownicy[przeszukiwaczUzytkownikow].pobierzID();
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
             system("pause");
-            return 0;
+            uzytkownicy[przeszukiwaczUzytkownikow];
         }
         przeszukiwaczUzytkownikow++;
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
     return 0;
+}
+
+int UzytkownikMenedzer::wylogujUzytkownika()
+{
+    idZalogowanegoUzytkownika = 0;
+    //adresaci.clear();
+    return idZalogowanegoUzytkownika;
 }
