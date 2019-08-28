@@ -109,3 +109,21 @@ int UzytkownikMenedzer::wylogujUzytkownika()
     //adresaci.clear();
     return idZalogowanegoUzytkownika;
 }
+
+void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
+{
+    string noweHaslo = "";
+    cout << "Podaj nowe haslo: ";
+    noweHaslo = MetodyPomocnicze::wczytajLinie();
+
+    for (int przeszukiwaczUzytkownikow = 0; przeszukiwaczUzytkownikow< uzytkownicy.size(); przeszukiwaczUzytkownikow++)
+    {
+        if (uzytkownicy[przeszukiwaczUzytkownikow].pobierzID() == idZalogowanegoUzytkownika)
+        {
+            uzytkownicy[przeszukiwaczUzytkownikow].ustawHaslo(noweHaslo);
+            cout << "Haslo zostalo zmienione." << endl << endl;
+            system("pause");
+        }
+    }
+    //zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+}

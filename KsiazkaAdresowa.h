@@ -17,6 +17,7 @@ public:
     };
     void rejestracjaUzytkownika();
     int logowanieUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
     int wylogujUzytkownika();
     void wypiszWszystkichUzytkownikow();
 };

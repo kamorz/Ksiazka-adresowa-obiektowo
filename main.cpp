@@ -13,10 +13,17 @@ int main()
 
     //LOGOWANIE
     int idZalogowanegoUzytkownika= ksiazkaAdresowa.logowanieUzytkownika();
-    cout<<"Numer ID zalogowanego uzytkownika: "<<idZalogowanegoUzytkownika<<endl<<"Za chwile nastapi wylogowanie..."<<endl<<endl;
+    cout<<"Sprawdzenie poprawnosci: Numer ID zalogowanego uzytkownika: "<<idZalogowanegoUzytkownika<<endl<<endl;
     system("pause");
 
+    //ZMIANA HASLA
+    cout<<"Nastapi teraz zmiana hasla..."<<endl;
+    system("pause");
+    ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+
     //WYLOGOWANIE
+    cout<<"Za chwile nastapi wylogowanie..."<<endl;
+    system("pause");
     idZalogowanegoUzytkownika= ksiazkaAdresowa.wylogujUzytkownika();
-    cout<<"Wylogowano! Aktualnie nikt nie jest zalogowany, wiec ID wynosi: "<<idZalogowanegoUzytkownika<<endl;
+    cout<<"Wylogowano! Aktualnie nikt nie jest zalogowany- ID uzytkownika wynosi: "<<idZalogowanegoUzytkownika<<endl;
 }
