@@ -32,6 +32,7 @@ public:
     int wylogujUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
+
 };
 
 #endif
