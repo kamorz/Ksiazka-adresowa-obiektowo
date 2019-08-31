@@ -35,3 +35,49 @@ int AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogow
 {
     return plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku (idZalogowanegoUzytkownika, adresaci);
 }
+
+int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+{
+    Adresat adresat;
+
+    system("cls");
+    cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
+    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+
+    adresaci.push_back(adresat);
+    dopiszAdresataDoPliku(adresat);
+
+    return ++idOstatniegoAdresata;
+}
+
+void AdresatMenedzer::dopiszAdresataDoPliku(Adresat adresat)
+{
+    return plikZAdresatami.dopiszAdresataDoPliku(adresat);
+}
+
+Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+{
+    Adresat adresat;
+
+    adresat.ustawID(++idOstatniegoAdresata);
+    adresat.ustawIDUzytkownika(idZalogowanegoUzytkownika);
+
+    cout << "Podaj imie: ";
+    adresat.ustawImie(MetodyPomocnicze::wczytajLinie());
+    adresat.ustawImie(MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.pobierzImie()));
+
+    cout << "Podaj nazwisko: ";
+    adresat.ustawNazwisko(MetodyPomocnicze::wczytajLinie()) ;
+    adresat.ustawNazwisko(MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.pobierzNazwisko())) ;
+
+    cout << "Podaj numer telefonu: ";
+    adresat.ustawNumerTelefonu(MetodyPomocnicze::wczytajLinie()) ;
+
+    cout << "Podaj email: ";
+    adresat.ustawEmail(MetodyPomocnicze::wczytajLinie()) ;
+
+    cout << "Podaj adres: ";
+    adresat.ustawAdres(MetodyPomocnicze::wczytajLinie()) ;
+
+    return adresat;
+}

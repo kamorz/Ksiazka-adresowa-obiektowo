@@ -19,6 +19,9 @@ public:
     void wyswietlWszystkichAdresatow();
     void wyswietlDaneAdresata(Adresat adresat);
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
+    void dopiszAdresataDoPliku(Adresat adresat);
+    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
 
 };
 

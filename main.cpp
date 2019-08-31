@@ -25,9 +25,19 @@ int main()
     //WCZYTANIE ADRESATOW ZALOGOWANEGO UZYTKOWNIKA
     int idOstatniegoAdresata=ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
     cout<<"ID ostatniego z adresatow: "<<idOstatniegoAdresata<<endl;
-    system("pause");
-
     cout<<"Nastapi teraz wyswietlenie adresatow: "<<endl;
+    system("pause");
+    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+
+
+    //DODAWANIE NOWEGO ADRESATA
+    cout<<"Nastapi dodanie adresata"<<endl;
+    idOstatniegoAdresata =ksiazkaAdresowa.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+
+
+    //PONOWNE WYSWIETLENIE
+    cout<<"Sprawdzenie- wyswietlenie listy wraz z nowo-dodanym uzytkownikiem"<<endl;
+    system("pause");
     ksiazkaAdresowa.wyswietlWszystkichAdresatow();
 
 

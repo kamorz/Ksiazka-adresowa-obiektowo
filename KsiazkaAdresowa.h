@@ -24,6 +24,7 @@ public:
     void wypiszWszystkichUzytkownikow();
     void wyswietlWszystkichAdresatow();
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
 };
 
 #endif
