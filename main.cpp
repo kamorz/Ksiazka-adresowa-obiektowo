@@ -17,9 +17,19 @@ int main()
     system("pause");
 
     //ZMIANA HASLA
-    cout<<"Nastapi teraz zmiana hasla..."<<endl;
+    /*cout<<"Nastapi teraz zmiana hasla..."<<endl;
     system("pause");
-    ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+    ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika); */
+
+
+    //WCZYTANIE ADRESATOW ZALOGOWANEGO UZYTKOWNIKA
+    int idOstatniegoAdresata=ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+    cout<<"ID ostatniego z adresatow: "<<idOstatniegoAdresata<<endl;
+    system("pause");
+
+    cout<<"Nastapi teraz wyswietlenie adresatow: "<<endl;
+    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+
 
     //WYLOGOWANIE
     cout<<"Za chwile nastapi wylogowanie..."<<endl;
