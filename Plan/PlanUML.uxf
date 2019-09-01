@@ -12,8 +12,17 @@
     <panel_attributes>KsiazkaAdresowa
 --
 -UzytkownikMenedzer: uzytkownikMenedzer
+-AdresatMenedzer: adresatMenedzer
 --
-KsiazkaAdresowa()</panel_attributes>
+KsiazkaAdresowa()
++rejestracjaUzytkownika():void
++logowanieUzytkownika():Integer
++zmianaHaslaZalogowanegoUzytkownika():void
++wylogujUzytkownika():Integer
++wypiszWszystkichUzytkownikow():void
++wypiszWszystkichUzytkownikow():void
++wczytajAdresatowZalogowanegoUzytkownikaZPliku():Integer
++dodajAdresata():Integer</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -28,6 +37,7 @@ KsiazkaAdresowa()</panel_attributes>
 --
 -idZalogowanegoUzytkownika:Integer
 -uzytkownicy:vector &lt;Uzytkownik&gt;
+-plikZUzytkownikami:PlikZUzytkownikami
 --
 +rejestracjaUzytkownika():void
 +logowanieUzytkownika():Integer
@@ -89,7 +99,9 @@ KsiazkaAdresowa()</panel_attributes>
 
 --
 +konwersjaIntNaString():String
-+wczytajLinie():String</panel_attributes>
++wczytajLinie():String
++konwersjaStringNaInt():Integer
++zamienPierwszaLitereNaDuzaAPozostaleNaMale():String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -102,11 +114,16 @@ KsiazkaAdresowa()</panel_attributes>
     </coordinates>
     <panel_attributes>AdresatMenedzer
 --
+-idZalogowanegoUzytkownika:Integer
+-adresaci:vector&lt;Adresat&gt;
+-plikZAdresatami:PlikZAdresatami
 
 --
 +dodajAdresata():Integer
 +wyswietlDaneAdresata():void
-+wczytajAdresatowZalogowanegoUzytkownikaZPliku():Integer</panel_attributes>
++wczytajAdresatowZalogowanegoUzytkownikaZPliku():Integer
++wyswietlWszystkichAdresatow():void
++podajDaneNowegoAdresata():Adresat</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -143,6 +160,13 @@ KsiazkaAdresowa()</panel_attributes>
 -fstream:PlikTekstowy
 --
 +PlikZUzytkownikami()
++wczytajAdresatowZalogowanegoUzytkownikaZPliku():Integer
++pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami():Integer
++pobierzDaneAdresata():Adresat
++pobierzLiczbe():String
++pobierzIdAdresataZDanychOddzielonychPionowymiKreskami():integer
++dopiszAdresataDoPliku():void
++zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami():String
 </panel_attributes>
     <additional_attributes/>
   </element>
