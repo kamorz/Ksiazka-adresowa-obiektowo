@@ -2,10 +2,10 @@
 #include "vector"
 #include "PlikZAdresatami.h"
 
-PlikZAdresatami::PlikZAdresatami()
+/*PlikZAdresatami::PlikZAdresatami()
 {
     nazwaPlikuZAdresatami="Adresaci.txt";
-}
+} */
 
 bool PlikZAdresatami::czyPlikJestPusty()
 {
