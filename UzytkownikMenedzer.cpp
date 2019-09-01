@@ -69,6 +69,7 @@ void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
 
 int UzytkownikMenedzer::logowanieUzytkownika()
 {
+    cin.sync();
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
 
