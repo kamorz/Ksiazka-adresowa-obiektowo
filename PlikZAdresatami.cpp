@@ -129,7 +129,7 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
     {
         liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
 
-        if (czyPlikJestPusty() == true)
+        if (adresat.pobierzID()==1)
         {
             plikTekstowy << liniaZDanymiAdresata;
         }

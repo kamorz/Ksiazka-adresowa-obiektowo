@@ -22,7 +22,9 @@ KsiazkaAdresowa()
 +wypiszWszystkichUzytkownikow():void
 +wypiszWszystkichUzytkownikow():void
 +wczytajAdresatowZalogowanegoUzytkownikaZPliku():Integer
-+dodajAdresata():Integer</panel_attributes>
++dodajAdresata():Integer
++wybierzOpcjeZMenuUzytkownika():Char
++wybierzOpcjeZMenuGlownego():Char</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -101,7 +103,8 @@ KsiazkaAdresowa()
 +konwersjaIntNaString():String
 +wczytajLinie():String
 +konwersjaStringNaInt():Integer
-+zamienPierwszaLitereNaDuzaAPozostaleNaMale():String</panel_attributes>
++zamienPierwszaLitereNaDuzaAPozostaleNaMale():String
++wczytajZnak():Char</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -123,7 +126,8 @@ KsiazkaAdresowa()
 +wyswietlDaneAdresata():void
 +wczytajAdresatowZalogowanegoUzytkownikaZPliku():Integer
 +wyswietlWszystkichAdresatow():void
--podajDaneNowegoAdresata():Adresat</panel_attributes>
+-podajDaneNowegoAdresata():Adresat
++wyczyscListeAdresatow():void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

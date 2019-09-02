@@ -95,11 +95,13 @@ int UzytkownikMenedzer::logowanieUzytkownika()
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
             system("pause");
-            uzytkownicy[przeszukiwaczUzytkownikow];
+            return 0;
         }
         przeszukiwaczUzytkownikow++;
     }
-    cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
+
+        cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
+
     system("pause");
     system("cls");
     return 0;

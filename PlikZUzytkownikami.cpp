@@ -1,16 +1,18 @@
 #include "PlikZUzytkownikami.h"
 
+
+
+
 void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 {
     fstream plikTekstowy;
     string liniaZDanymiUzytkownika = "";
     plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::app);
-
     if (plikTekstowy.good() == true)
     {
         liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownik);
 
-        if (czyPlikJestPusty() == true)
+        if (uzytkownik.pobierzID()==1)
         {
             plikTekstowy << liniaZDanymiUzytkownika;
         }
@@ -24,6 +26,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
     plikTekstowy.close();
 }
 
+
 bool PlikZUzytkownikami::czyPlikJestPusty()
 {
     fstream plikTekstowy;
@@ -33,6 +36,7 @@ bool PlikZUzytkownikami::czyPlikJestPusty()
     else
         return false;
 }
+
 
 string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik)
 {
