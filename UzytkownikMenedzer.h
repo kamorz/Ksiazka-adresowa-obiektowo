@@ -11,12 +11,15 @@
 
 #include "Uzytkownik.h"
 #include "PlikZUzytkownikami.h"
+#include "Adresat.h"
+
 using namespace std;
 
 class UzytkownikMenedzer
 {
     int idZalogowanegoUzytkownika;
     vector <Uzytkownik> uzytkownicy;
+    vector <Adresat> adresaci;
     PlikZUzytkownikami plikZUzytkownikami;
 
     Uzytkownik podajDaneNowegoUzytkownika();

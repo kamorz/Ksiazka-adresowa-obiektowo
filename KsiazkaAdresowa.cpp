@@ -3,6 +3,7 @@
 void KsiazkaAdresowa::rejestracjaUzytkownika()
 {
     uzytkownikMenedzer.rejestracjaUzytkownika();
+    system("cls");
 }
 
 int KsiazkaAdresowa::logowanieUzytkownika()
@@ -12,7 +13,9 @@ int KsiazkaAdresowa::logowanieUzytkownika()
 
 int KsiazkaAdresowa::wylogujUzytkownika()
 {
-    uzytkownikMenedzer.wylogujUzytkownika();
+    adresatMenedzer.wyczyscListeAdresatow();
+    return uzytkownikMenedzer.wylogujUzytkownika();
+
 }
 
 void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()

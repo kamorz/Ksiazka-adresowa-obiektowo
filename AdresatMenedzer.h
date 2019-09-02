@@ -23,6 +23,7 @@ public:
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
     void dopiszAdresataDoPliku(Adresat adresat);
+    void wyczyscListeAdresatow();
 
 };
 

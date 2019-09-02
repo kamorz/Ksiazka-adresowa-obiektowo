@@ -62,6 +62,7 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, 
     adresat.ustawID(++idOstatniegoAdresata);
     adresat.ustawIDUzytkownika(idZalogowanegoUzytkownika);
 
+    cin.sync();
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocnicze::wczytajLinie());
     adresat.ustawImie(MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.pobierzImie()));
@@ -80,4 +81,9 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, 
     adresat.ustawAdres(MetodyPomocnicze::wczytajLinie()) ;
 
     return adresat;
+}
+
+void AdresatMenedzer::wyczyscListeAdresatow()
+{
+    adresaci.clear();
 }
