@@ -25,6 +25,8 @@ public:
     void wyswietlWszystkichAdresatow();
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
+    char wybierzOpcjeZMenuUzytkownika();
+    char wybierzOpcjeZMenuGlownego();
 };
 
 #endif

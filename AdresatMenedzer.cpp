@@ -87,3 +87,5 @@ void AdresatMenedzer::wyczyscListeAdresatow()
 {
     adresaci.clear();
 }
+
+
