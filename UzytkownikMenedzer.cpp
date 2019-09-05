@@ -1,5 +1,18 @@
 #include "UzytkownikMenedzer.h"
 
+    int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
+    {
+        return idZalogowanegoUzytkownika;
+    }
+
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
+{
+if (idZalogowanegoUzytkownika>0)
+    return true;
+else
+    return false;
+}
+
 void UzytkownikMenedzer::rejestracjaUzytkownika()
 {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
@@ -85,7 +98,8 @@ int UzytkownikMenedzer::logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return uzytkownicy[przeszukiwaczUzytkownikow].pobierzID();
+                    idZalogowanegoUzytkownika= uzytkownicy[przeszukiwaczUzytkownikow].pobierzID();
+                    return idZalogowanegoUzytkownika;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;

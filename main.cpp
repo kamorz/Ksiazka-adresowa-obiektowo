@@ -6,13 +6,13 @@ using namespace std;
 int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
-    int idZalogowanegoUzytkownika=0;
+    //int idZalogowanegoUzytkownika=0;
     int idOstatniegoAdresata;
     char wybor;
 
     while (true)
     {
-        if (idZalogowanegoUzytkownika == 0)
+        if (ksiazkaAdresowa.czyUzytkownikJestZalogowany()!=true)
         {
             wybor=ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
             switch (wybor)
@@ -21,8 +21,8 @@ int main()
                 ksiazkaAdresowa.rejestracjaUzytkownika();
                 break;
             case '2':
-                idZalogowanegoUzytkownika= ksiazkaAdresowa.logowanieUzytkownika();
-                idOstatniegoAdresata=ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+                ksiazkaAdresowa.logowanieUzytkownika();
+                idOstatniegoAdresata=ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
                 break;
             case '9':
                 exit(0);
@@ -30,8 +30,7 @@ int main()
             default:
                 cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
                 system("pause");
-                system("cls");
-                break;
+                system("cls");  break;
             }
         }
         else
@@ -40,17 +39,17 @@ int main()
             switch (wybor)
             {
             case '1':
-                idOstatniegoAdresata =ksiazkaAdresowa.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+                idOstatniegoAdresata =ksiazkaAdresowa.dodajAdresata(idOstatniegoAdresata);
                 break;
             case '2':
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 //system("pause");
                 break;
             case '3':
-                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
             case '4':
-                idZalogowanegoUzytkownika= ksiazkaAdresowa.wylogujUzytkownika();
+                ksiazkaAdresowa.wylogujUzytkownika();
                 system("cls");
                 break;
             }
