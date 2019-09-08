@@ -46,7 +46,6 @@ int main()
                 break;
             case '4':
                 ksiazkaAdresowa.wylogujUzytkownika();
-                system("cls");
                 break;
             }
         }

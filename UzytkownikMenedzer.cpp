@@ -119,6 +119,7 @@ int UzytkownikMenedzer::logowanieUzytkownika()
 int UzytkownikMenedzer::wylogujUzytkownika()
 {
     idZalogowanegoUzytkownika = 0;
+    system("cls");
     return idZalogowanegoUzytkownika;
 }
 
