@@ -1,6 +1,11 @@
 #include "AdresatMenedzer.h"
 #include <cstdlib>
 
+int AdresatMenedzer::pobierzIdOstatniegoAdresata()
+{
+    return plikZAdresatami.pobierzIdOstatniegoAdresata();
+}
+
 void AdresatMenedzer::wyswietlWszystkichAdresatow()
 {
     system("cls");
@@ -29,17 +34,15 @@ void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
     cout << "Numer telefonu:     " << adresat.pobierzNumerTelefonu() << endl;
     cout << "Email:              " << adresat.pobierzEmail() << endl;
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
+
+    cout<<"Ostatnie ID: "<<pobierzIdOstatniegoAdresata()<<endl;
 }
 
-int AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
-{
-    return plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku (idZalogowanegoUzytkownika, adresaci);
-}
 
-int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
-
+    int idOstatniegoAdresata=pobierzIdOstatniegoAdresata();
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
     adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
@@ -59,7 +62,7 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, 
 {
     Adresat adresat;
 
-    adresat.ustawID(++idOstatniegoAdresata);
+    adresat.ustawID(plikZAdresatami.pobierzIdOstatniegoAdresata()+1);
     adresat.ustawIDUzytkownika(idZalogowanegoUzytkownika);
 
     cin.sync();
@@ -83,9 +86,6 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, 
     return adresat;
 }
 
-void AdresatMenedzer::wyczyscListeAdresatow()
-{
-    adresaci.clear();
-}
+
 
 
