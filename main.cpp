@@ -42,9 +42,15 @@ int main()
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '3':
-                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+                ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
                 break;
             case '4':
+                ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
+                break;
+            case '8':
+                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+                break;
+            case '9':
                 ksiazkaAdresowa.wylogujUzytkownika();
                 break;
             }

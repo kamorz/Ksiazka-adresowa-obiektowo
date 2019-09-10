@@ -37,6 +37,8 @@ public:
     int pobierzIDZalogowanegoUzytkownika();
     int pobierzIdOstatniegoAdresata();
     bool czyUzytkownikJestZalogowany();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
 };
 
 #endif

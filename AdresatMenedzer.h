@@ -29,7 +29,10 @@ public:
     void wyswietlDaneAdresata(Adresat adresat);
     int dodajAdresata(int idZalogowanegoUzytkownika);
     void dopiszAdresataDoPliku(Adresat adresat);
-    //void wyczyscListeAdresatow();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
+
 
 };
 
