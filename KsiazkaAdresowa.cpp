@@ -73,6 +73,16 @@ void KsiazkaAdresowa::dodajAdresata()
      adresatMenedzer->dodajAdresata(pobierzIDZalogowanegoUzytkownika());
 }
 
+void KsiazkaAdresowa::edytujAdresata()
+{
+     adresatMenedzer->edytujAdresata();
+}
+
+void KsiazkaAdresowa::usunAdresata()
+{
+     adresatMenedzer->usunAdresata();
+}
+
 char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 {
     char wybor;
@@ -84,6 +94,8 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     cout << "2. Wyswietl adresatow" << endl;
     cout << "3. Wyszukaj adresata po imieniu" << endl;
     cout << "4. Wyszukaj adresata po nazwisku" << endl;
+    cout << "5. Edytuj adresata" << endl;
+    cout << "6. Usun adresata" << endl;
     cout << "---------------------------" << endl;
     cout << "8. Zmien haslo" << endl;
     cout << "9. Wyloguj sie" << endl;
