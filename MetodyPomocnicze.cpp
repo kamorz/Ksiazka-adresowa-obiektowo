@@ -70,3 +70,14 @@ int MetodyPomocnicze::wczytajLiczbeCalkowita()
     }
     return liczba;
 }
+
+string MetodyPomocnicze::pobierzLiczbe(string tekst, int pozycjaZnaku)
+{
+    string liczba = "";
+    while(isdigit(tekst[pozycjaZnaku]) == true)
+    {
+        liczba += tekst[pozycjaZnaku];
+        pozycjaZnaku ++;
+    }
+    return liczba;
+}
