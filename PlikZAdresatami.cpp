@@ -231,6 +231,8 @@ void PlikZAdresatami::usunWybranaLinieWPliku(int idUsuwanego)
         odczytywanyPlikTekstowy.close();
         tymczasowyPlikTekstowy.close();
 
+        if (idUsuwanego==idOstatniegoAdresata)
+            idOstatniegoAdresata-=1;
 
         usunPlik(NAZWA_PLIKU_Z_ADRESATAMI);
         zmienNazwePliku(nazwaTymczasowegoPlikuZAdresatami, NAZWA_PLIKU_Z_ADRESATAMI);
