@@ -2,6 +2,7 @@
 #include <fstream>
 
 #include "Adresat.h"
+#include "Uzytkownik.h"
 #include "MetodyPomocnicze.h"
 
 
@@ -12,7 +13,13 @@ using namespace std;
 
 class PlikTekstowy
 {
+    const string NAZWA_PLIKU;
+    public:
+    PlikTekstowy(string nazwaPliku) : NAZWA_PLIKU(nazwaPliku) {
+    }
+    string pobierzNazwePliku();
     bool czyPlikJestPusty();
+
 };
 
 #endif
@@ -22,13 +29,12 @@ class PlikTekstowy
 
 class PlikZAdresatami : public PlikTekstowy
 {
-    const string NAZWA_PLIKU_Z_ADRESATAMI;
     int idOstatniegoAdresata;
     void usunPlik(string nazwaPlikuZRozszerzeniem);
     void zmienNazwePliku(string staraNazwa, string nowaNazwa);
 
 public:
-    PlikZAdresatami (string nazwaPlikuZAdresatami) : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
+    PlikZAdresatami (string nazwaPliku) : PlikTekstowy(nazwaPliku)
     {
         idOstatniegoAdresata=0;
     };
@@ -50,13 +56,11 @@ public:
 
 class PlikZUzytkownikami : public PlikTekstowy
 {
-    const string NAZWA_PLIKU_Z_UZYTKOWNIKAMI;
-    fstream plikTekstowy;
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 
 public:
-    PlikZUzytkownikami (string nazwaPlikuZUzytkownikami) : NAZWA_PLIKU_Z_UZYTKOWNIKAMI(nazwaPlikuZUzytkownikami) {};
+    PlikZUzytkownikami (string nazwaPliku) : PlikTekstowy(nazwaPliku) {};
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy);
     vector <Uzytkownik> wczytajUzytkownikowZPliku();

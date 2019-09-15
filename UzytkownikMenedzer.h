@@ -10,7 +10,7 @@
 #include <sstream>
 
 #include "Uzytkownik.h"
-#include "PlikZUzytkownikami.h"
+#include "PlikTekstowy.h"
 #include "Adresat.h"
 
 using namespace std;

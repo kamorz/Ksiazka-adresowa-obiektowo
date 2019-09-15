@@ -71,31 +71,29 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>728</x>
-      <y>21</y>
+      <x>735</x>
+      <y>161</y>
       <w>189</w>
       <h>217</h>
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 
 --
--nazwaPlikuZUzytkownikami:String
--fstream:PlikTekstowy
 --
 +PlikZUzytkownikami()
 +dopiszUzytkownikaDoPliku():void
 +zapiszWszystkichUzytkownikowDoPliku():Vector
--czyPlikJestPusty():Bool
--zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami():String</panel_attributes>
+-zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami():String
++wczytajUzytkownikowZPliku():vector&lt;Uzytkownik&gt;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>728</x>
-      <y>504</y>
+      <x>518</x>
+      <y>462</y>
       <w>189</w>
-      <h>98</h>
+      <h>112</h>
     </coordinates>
     <panel_attributes>MetodyPomocnicze
 
@@ -104,7 +102,8 @@ KsiazkaAdresowa()
 +wczytajLinie():String
 +konwersjaStringNaInt():Integer
 +zamienPierwszaLitereNaDuzaAPozostaleNaMale():String
-+wczytajZnak():Char</panel_attributes>
++wczytajZnak():Char
++pobierzLiczbe():String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -117,7 +116,7 @@ KsiazkaAdresowa()
     </coordinates>
     <panel_attributes>AdresatMenedzer
 --
--idZalogowanegoUzytkownika:Integer
+-IDZALOGOWANEGOUZYTKOWNIKA:Integer
 -adresaci:vector&lt;Adresat&gt;
 -plikZAdresatami:PlikZAdresatami
 
@@ -127,7 +126,13 @@ KsiazkaAdresowa()
 +wczytajAdresatowZalogowanegoUzytkownikaZPliku():Integer
 +wyswietlWszystkichAdresatow():void
 -podajDaneNowegoAdresata():Adresat
-+wyczyscListeAdresatow():void</panel_attributes>
++wyczyscListeAdresatow():void
++podajIdWybranegoAdresata():Int
++edytujAdresata():Int
++usunAdresata():Int
++wyswietlIloscWyszukanychAdresatow():void
++wyszukajAdresatowPoImieniu():void
++wyszukajAdresatowPoNazwisku():void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -152,26 +157,44 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>728</x>
-      <y>259</y>
+      <x>735</x>
+      <y>392</y>
       <w>189</w>
       <h>217</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 
 --
--nazwaPlikuZUzytkownikami:String
--fstream:PlikTekstowy
+-idOstatniegoAdresata:Int
 --
-+PlikZUzytkownikami()
++PlikZAdresatami()
 +wczytajAdresatowZalogowanegoUzytkownikaZPliku():Integer
 +pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami():Integer
 +pobierzDaneAdresata():Adresat
-+pobierzLiczbe():String
 +pobierzIdAdresataZDanychOddzielonychPionowymiKreskami():integer
 +dopiszAdresataDoPliku():void
 +zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami():String
-</panel_attributes>
++pobierzIdOstatniegoAdresata():int
++usunWybranaLinieWPliku():void
++edytujWybranaLinieWPliku():void
+-zmienNazwePliku():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>735</x>
+      <y>21</y>
+      <w>189</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>PlikTekstowy
+--
+-NAZWA_PLIKU: String
+--
++PlikTekstowy()
++czyPlikJestPusty():Bool
++pobierzNazwePliku():void</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

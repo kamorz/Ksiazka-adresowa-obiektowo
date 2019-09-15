@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "Adresat.h"
-#include "PlikZAdresatami.h"
+#include "PlikTekstowy.h"
 #include "MetodyPomocnicze.h"
 
 using namespace std;
