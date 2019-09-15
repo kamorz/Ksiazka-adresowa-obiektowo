@@ -36,7 +36,6 @@ int KsiazkaAdresowa::logowanieUzytkownika()
 
 int KsiazkaAdresowa::wylogujUzytkownika()
 {
-    //adresatMenedzer.wyczyscListeAdresatow();
     return uzytkownikMenedzer.wylogujUzytkownika();
     delete adresatMenedzer;
     adresatMenedzer=NULL;
@@ -70,17 +69,17 @@ void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
 
 void KsiazkaAdresowa::dodajAdresata()
 {
-     adresatMenedzer->dodajAdresata(pobierzIDZalogowanegoUzytkownika());
+    adresatMenedzer->dodajAdresata(pobierzIDZalogowanegoUzytkownika());
 }
 
 void KsiazkaAdresowa::edytujAdresata()
 {
-     adresatMenedzer->edytujAdresata();
+    adresatMenedzer->edytujAdresata();
 }
 
 void KsiazkaAdresowa::usunAdresata()
 {
-     adresatMenedzer->usunAdresata();
+    adresatMenedzer->usunAdresata();
 }
 
 char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()

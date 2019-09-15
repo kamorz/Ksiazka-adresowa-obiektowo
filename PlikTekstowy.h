@@ -5,7 +5,6 @@
 #include "Uzytkownik.h"
 #include "MetodyPomocnicze.h"
 
-
 using namespace std;
 
 #ifndef PLIKTEKSTOWY_H

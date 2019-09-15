@@ -13,17 +13,17 @@ bool PlikTekstowy::czyPlikJestPusty()
 }
 
 
-    string PlikTekstowy::pobierzNazwePliku()
-    {
-        return NAZWA_PLIKU;
-    }
+string PlikTekstowy::pobierzNazwePliku()
+{
+    return NAZWA_PLIKU;
+}
 
-    int PlikZAdresatami::pobierzIdOstatniegoAdresata()
-    {
-        return idOstatniegoAdresata;
-    }
+int PlikZAdresatami::pobierzIdOstatniegoAdresata()
+{
+    return idOstatniegoAdresata;
+}
 
-    vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
+vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
     vector <Adresat> adresaci;
@@ -220,7 +220,7 @@ void PlikZAdresatami::usunWybranaLinieWPliku(int idUsuwanego)
             // aby na koncu pliku nie bylo pustej linii
             if (pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) == idUsuwanego) {}
             else if (numerWczytanejLinii == 1 &&
-                    pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) != idUsuwanego)
+                     pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) != idUsuwanego)
             {
                 tymczasowyPlikTekstowy << wczytanaLinia;
                 czyUsuwamyPierwszaLinie=false;
@@ -365,7 +365,7 @@ void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik>
 
             if (itr == itrKoniec)
             {
-               plikTekstowy << liniaZDanymiUzytkownika;
+                plikTekstowy << liniaZDanymiUzytkownika;
             }
             else
             {

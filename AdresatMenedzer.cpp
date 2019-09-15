@@ -298,7 +298,7 @@ int AdresatMenedzer::usunAdresata()
     cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
     for (int przeszukiwacz = 0; przeszukiwacz< adresaci.size(); przeszukiwacz++)
     {
-    cout<<adresaci[przeszukiwacz].pobierzID()<<" "<<adresaci[przeszukiwacz].pobierzImie()<<" "<<adresaci[przeszukiwacz].pobierzNazwisko()<<endl;
+        cout<<adresaci[przeszukiwacz].pobierzID()<<" "<<adresaci[przeszukiwacz].pobierzImie()<<" "<<adresaci[przeszukiwacz].pobierzNazwisko()<<endl;
     }
     idUsuwanegoAdresata = podajIdWybranegoAdresata();
 

@@ -1,16 +1,16 @@
 #include "UzytkownikMenedzer.h"
 
-    int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
-    {
-        return idZalogowanegoUzytkownika;
-    }
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+}
 
 bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
 {
-if (idZalogowanegoUzytkownika>0)
-    return true;
-else
-    return false;
+    if (idZalogowanegoUzytkownika>0)
+        return true;
+    else
+        return false;
 }
 
 void UzytkownikMenedzer::rejestracjaUzytkownika()
@@ -34,7 +34,8 @@ Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika()
         cout << endl << "Podaj login: ";
         cin>>login;
         uzytkownik.ustawLogin(login);
-    } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
+    }
+    while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
     string haslo;
     cout << "Podaj haslo: ";
     cin>>haslo;
@@ -57,8 +58,8 @@ bool UzytkownikMenedzer::czyIstniejeLogin(string login)
     {
         if (uzytkownicy[i].pobierzLogin()==login)
         {
-           cout<<endl<<"Istnieje uzytkownik o takim loginie";
-           return true;
+            cout<<endl<<"Istnieje uzytkownik o takim loginie";
+            return true;
         }
 
     }
@@ -67,7 +68,7 @@ bool UzytkownikMenedzer::czyIstniejeLogin(string login)
 
 void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
 {
-        for (int i=0; i<uzytkownicy.size(); i++)
+    for (int i=0; i<uzytkownicy.size(); i++)
     {
         cout<<"ID: "<<uzytkownicy[i].pobierzID()<<" ";
         cout<<"Login:"<<uzytkownicy[i].pobierzLogin()<<endl;
@@ -109,7 +110,7 @@ int UzytkownikMenedzer::logowanieUzytkownika()
         przeszukiwaczUzytkownikow++;
     }
 
-        cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
+    cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
 
     system("pause");
     system("cls");
