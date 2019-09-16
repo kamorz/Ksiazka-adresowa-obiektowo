@@ -11,6 +11,7 @@
 
 #include "Uzytkownik.h"
 #include "PlikTekstowy.h"
+#include "PlikZUzytkownikami.h"
 #include "Adresat.h"
 
 using namespace std;

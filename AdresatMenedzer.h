@@ -5,6 +5,7 @@
 #include <vector>
 #include "Adresat.h"
 #include "PlikTekstowy.h"
+#include "PlikZAdresatami.h"
 #include "MetodyPomocnicze.h"
 
 using namespace std;
