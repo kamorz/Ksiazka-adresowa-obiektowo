@@ -32,6 +32,7 @@ public:
     void edytujWybranaLinieWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
     void usunWybranaLinieWPliku(int numerUsuwanejLinii);
+    int ustalNajwyzszeIdAdresataWPliku();
 
 };
 
