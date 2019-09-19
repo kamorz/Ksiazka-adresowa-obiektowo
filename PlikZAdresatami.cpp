@@ -3,8 +3,28 @@
 #include "PlikZAdresatami.h"
 
 
+
 int PlikZAdresatami::pobierzIdOstatniegoAdresata()
 {
+    return idOstatniegoAdresata;
+}
+
+int PlikZAdresatami::ustalNajwyzszeIdAdresataWPliku()
+{
+    string daneJednegoAdresataOddzielonePionowymiKreskami = "";
+    string daneOstaniegoAdresataWPliku = "";
+    fstream plikTekstowy;
+    plikTekstowy.open(pobierzNazwePliku().c_str(), ios::in);
+    if (plikTekstowy.good() == true)
+    {
+        while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami)){}
+        daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
+    }
+    plikTekstowy.close();
+    if (daneOstaniegoAdresataWPliku != "")
+    {
+        idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
+    }
     return idOstatniegoAdresata;
 }
 
@@ -36,8 +56,6 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
     if (daneOstaniegoAdresataWPliku != "")
     {
         idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
-        //cout<<idOstatniegoAdresata<<endl;
-        //system("pause");
     }
     return  adresaci;
 }
@@ -201,8 +219,6 @@ void PlikZAdresatami::usunWybranaLinieWPliku(int idUsuwanego)
     {
         while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
         {
-            // Tych przypadkow jest tyle, gdyz chcemy osiagnac taki efekt,
-            // aby na koncu pliku nie bylo pustej linii
             if (pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) == idUsuwanego) {}
             else if (numerWczytanejLinii == 1 &&
                      pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) != idUsuwanego)
@@ -222,11 +238,11 @@ void PlikZAdresatami::usunWybranaLinieWPliku(int idUsuwanego)
         odczytywanyPlikTekstowy.close();
         tymczasowyPlikTekstowy.close();
 
-        if (idUsuwanego==idOstatniegoAdresata)
-            idOstatniegoAdresata-=1;
-
         usunPlik(pobierzNazwePliku());
         zmienNazwePliku(nazwaTymczasowegoPlikuZAdresatami, pobierzNazwePliku());
+
+        if (idUsuwanego==idOstatniegoAdresata)
+            idOstatniegoAdresata = ustalNajwyzszeIdAdresataWPliku();
     }
 }
 

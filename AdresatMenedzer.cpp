@@ -26,6 +26,19 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow()
     system("pause");
 }
 
+
+void AdresatMenedzer::wyswietlAdresatowWFormieUproszczonej()
+{
+    for (int przeszukiwacz = 0 ; przeszukiwacz< adresaci.size(); przeszukiwacz++)
+    {
+        cout << endl << "Id: " << adresaci[przeszukiwacz].pobierzID()<< "  Imie:  " << adresaci[przeszukiwacz].pobierzImie()<<
+        "  Nazwisko:  " << adresaci[przeszukiwacz].pobierzNazwisko()<< " (tel: "<<adresaci[przeszukiwacz].pobierzNumerTelefonu()<<" ) ";
+    }
+    cout<<endl<<endl;
+}
+
+
+
 void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
 {
     cout << endl << "Id:                 " << adresat.pobierzID() << endl;
@@ -167,12 +180,8 @@ int AdresatMenedzer::edytujAdresata()
     int idEdytowanegoAdresata = 0;
     int numerLiniiEdytowanegoAdresata = 0;
     string liniaZDanymiAdresata = "";
-
-    cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
-    for (int przeszukiwacz = 0; przeszukiwacz< adresaci.size(); przeszukiwacz++)
-    {
-        cout<<adresaci[przeszukiwacz].pobierzID()<<" "<<adresaci[przeszukiwacz].pobierzImie()<<" "<<adresaci[przeszukiwacz].pobierzNazwisko()<<endl;
-    }
+    cout<<" >>>EDYCJA<<<"<<endl;
+    wyswietlAdresatowWFormieUproszczonej();
 
     idEdytowanegoAdresata = podajIdWybranegoAdresata();
 
@@ -295,11 +304,8 @@ int AdresatMenedzer::usunAdresata()
     int numerLiniiUsuwanegoAdresata = 0;
 
     system("cls");
-    cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
-    for (int przeszukiwacz = 0; przeszukiwacz< adresaci.size(); przeszukiwacz++)
-    {
-        cout<<adresaci[przeszukiwacz].pobierzID()<<" "<<adresaci[przeszukiwacz].pobierzImie()<<" "<<adresaci[przeszukiwacz].pobierzNazwisko()<<endl;
-    }
+    cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl;
+    wyswietlAdresatowWFormieUproszczonej();
     idUsuwanegoAdresata = podajIdWybranegoAdresata();
 
     char znak;

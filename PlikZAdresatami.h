@@ -5,6 +5,7 @@
 #include "Uzytkownik.h"
 #include "MetodyPomocnicze.h"
 #include "PlikTekstowy.h"
+#include "UzytkownikMenedzer.h"
 
 using namespace std;
 
@@ -31,6 +32,8 @@ public:
     void edytujWybranaLinieWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
     void usunWybranaLinieWPliku(int numerUsuwanejLinii);
+    int ustalNajwyzszeIdAdresataWPliku();
+
 };
 
 #endif
