@@ -26,6 +26,7 @@ public:
 
     int pobierzIdOstatniegoAdresata();
     void wyswietlWszystkichAdresatow();
+    void wyswietlAdresatowWFormieUproszczonej();
     void wyswietlDaneAdresata(Adresat adresat);
     int dodajAdresata(int idZalogowanegoUzytkownika);
     void dopiszAdresataDoPliku(Adresat adresat);
