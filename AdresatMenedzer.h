@@ -15,6 +15,7 @@ class AdresatMenedzer
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
+    char wybierzOpcjeZMenuEdycja();
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
 
 public:
@@ -27,8 +28,8 @@ public:
     int pobierzIdOstatniegoAdresata();
     void wyswietlWszystkichAdresatow();
     void wyswietlAdresatowWFormieUproszczonej();
-    void wyswietlDaneAdresata(Adresat adresat);
-    int dodajAdresata(int idZalogowanegoUzytkownika);
+    void wyswietlDaneAdresata(Adresat adresat);//
+    int dodajAdresata(int idZalogowanegoUzytkownika);//
     void dopiszAdresataDoPliku(Adresat adresat);
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
@@ -36,7 +37,6 @@ public:
     int edytujAdresata();
     int usunAdresata();
     int podajIdWybranegoAdresata();
-    char wybierzOpcjeZMenuEdycja();
     void zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata);
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
 
